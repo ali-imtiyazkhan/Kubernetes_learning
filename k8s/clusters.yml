@@ -10,8 +10,8 @@ nodes:
 # starting a container useing docker
 # docker run -d -p 3000:8080 nginx
 
-# start a pod cli
-# kubectl run nginx --image=nginx --port 80
+# start a pod using kubectl
+# kubectl run nginx --image=nginx --port=80
 
 # check the status of the pod 
 # kubectl get pod
@@ -27,3 +27,9 @@ nodes:
 
 # get the image name 
 # kubectl get pod nginx -o=jsonpath='{.spec.containers[0].image}'
+
+# to fetch all the detail of a pod 
+# kubectl describe nginx 
+
+# to delete a pod 
+# kubectl delete pod nginx 
