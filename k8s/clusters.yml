@@ -5,3 +5,18 @@ nodes:
   - role: control-plane
   - role: worker
   - role: worker
+
+
+
+
+# start a pod cli
+# kubectl run nginx --image=nginx --port 80
+
+# check the status of the pod 
+# kubectl get pod
+
+# check the logs 
+# kubectl logs nginx
+
+# port forward 
+# kubectl port-forward nginx 8080:80
