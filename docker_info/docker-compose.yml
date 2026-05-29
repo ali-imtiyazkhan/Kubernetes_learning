@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  # Web application service
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bun_web_app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - REDIS_HOST=cache
+      - REDIS_PORT=6379
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - cache
+    networks:
+      - app-network
+
+  # Redis cache service
+  cache:
+    image: redis:7.0-alpine
+    container_name: app_redis_cache
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - app-network
+
+# Networks to isolate services
+networks:
+  app-network:
+    driver: bridge
+
+# Named volumes for data persistence
+volumes:
+  redis_data:
+    driver: local
