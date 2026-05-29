@@ -33,3 +33,7 @@ nodes:
 
 # to delete a pod 
 # kubectl delete pod nginx 
+
+
+# if any pod get cresh it will not delete that it will retry or restert it after a time gap 
+ 
