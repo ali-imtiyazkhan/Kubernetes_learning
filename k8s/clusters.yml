@@ -21,3 +21,9 @@ nodes:
 
 # port forward 
 # kubectl port-forward nginx 8080:80
+
+# starting a nginx containe inside a pod in k8 cluster
+# kubectl run nginx --image=nginx --port=80
+
+# get the image name 
+# kubectl get pod nginx -o=jsonpath='{.spec.containers[0].image}'
