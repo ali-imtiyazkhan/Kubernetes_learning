@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bun-web-deployment
+  labels:
+    app: bun-web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bun-web
+  template:
+    metadata:
+      labels:
+        app: bun-web
+    spec:
+      containers:
+      - name: bun-web-app
+        image: oven/bun:1.1-alpine
+        command: ["bun", "run", "-e", "console.log('Server started on port 3000'); Bun.serve({ port: 3000, fetch(req) { return new Response('Hello from Kubernetes!'); } });"]
+        ports:
+        - containerPort: 3000
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "256Mi"
+          requests:
+            cpu: "250m"
+            memory: "128Mi"
