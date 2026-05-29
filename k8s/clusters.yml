@@ -7,7 +7,8 @@ nodes:
   - role: worker
 
 
-
+# starting a container useing docker
+# docker run -d -p 3000:8080 nginx
 
 # start a pod cli
 # kubectl run nginx --image=nginx --port 80
