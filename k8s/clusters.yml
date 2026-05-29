@@ -37,3 +37,27 @@ nodes:
 
 # if any pod get cresh it will not delete that it will retry or restert it after a time gap 
  
+
+#  what we have learnt till now
+
+# cluster -  it is a group of node that are connected to each other 
+
+# node  - it is a machine that is connected to the cluster and that is used to run the pods 
+
+# pod - it is the smallest unit of kubernetes and it is used to run the containers 
+
+# container - it is a  package of code and its dependency  which is used to run the application 
+
+# image - it is a template of a container which is used to create the containers 
+
+#-----------------------------------------
+
+# deployement - it is used to deploy the application 
+# replicaset - it is used to create the multiple replica of the application 
+# services - it is used to expose the application 
+# ingress - it is used to expose the application to the outside world 
+# configmap - it is used to store the configuration data 
+# secret - it is used to store the sensitive data 
+# volume - it is used to store the data 
+# persistent volume - it is used to store the data 
+# persistent volume claim - it is used to store the data 
