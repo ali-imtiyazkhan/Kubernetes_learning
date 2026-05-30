@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-Deployment
+spec:
+  replicas: 5
+  selector:
+    matchLables:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+          env:
+            - name: POSTGRES_PASSWORD
+              value: [PASSWORD]
+            - name: POSTGRES_USER
+              value: postgres
